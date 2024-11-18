@@ -21,7 +21,7 @@
 ---
 
 ## Important Links
-- **Paper link:** [here](#)
+- **Paper link:** [here](https://www.overleaf.com/read/bssqbyckrtqq#0e44cb)
 
 ---
 
