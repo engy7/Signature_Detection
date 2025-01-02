@@ -11,7 +11,9 @@ CONFIG = {
     "num_classes": 4, 
     "batch_size": 4,
     "batch_val": 4,
+    "batch_test": 4,
     "learning_rate": 0.001,
     "num_epochs": 100,
+    "confidence_threshold": 0.5,
     "output_dir": "weights",
 }
