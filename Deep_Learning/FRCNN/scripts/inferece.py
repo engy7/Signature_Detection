@@ -40,7 +40,9 @@ def infer_image(model, image_path, device, confidence_threshold):
     with torch.no_grad():
         predictions = model(image_tensor)[0]
 
+    # print("Raw Predictions:", predictions)  # Check raw output
     return image, predictions
+
 
 # Compute Intersection over Union (IoU)
 def compute_iou(box1, box2):
@@ -157,8 +159,8 @@ def save_coco_results(predictions, image_id, results_list):
 
 # Main inference script
 def main():
-    input_dir = "/home/omar/Masters/Adv Image and Video Processiong/Project/Dataset/fcrnn_split_data_new/test/images"
-    output_dir = "/home/omar/Masters/Adv Image and Video Processiong/Project/Deep_Learning/FRCNN/inference_results4"
+    input_dir = "/home/omar/Masters/Adv Image and Video Processiong/Project/Dataset/fcrnn_split_data_clean/test/images"
+    output_dir = "/home/omar/Masters/Adv Image and Video Processiong/Project/Deep_Learning/FRCNN/outputs/inference_results_clean"
     results_file = os.path.join(output_dir, "results.json")
     os.makedirs(output_dir, exist_ok=True)
 
@@ -167,7 +169,7 @@ def main():
     model = load_model(model_checkpoint, CONFIG["num_classes"])
     model.to(device)
 
-    iou_threshold = 0  # Adjust as needed
+    iou_threshold = 1  # Adjust as needed
     results_list = []  # Store predictions in COCO format
 
     for image_name in os.listdir(input_dir):
@@ -189,7 +191,7 @@ def main():
             # print(len(results_list))
 
             # Draw predictions (optional)
-            output_image = draw_predictions(image, predictions, CONFIG["confidence_threshold"], target_class_id=3)
+            output_image = draw_predictions(image, predictions, CONFIG["confidence_threshold"], target_class_id=1)
             output_path = os.path.join(output_dir, image_name)
             output_image.save(output_path)
 

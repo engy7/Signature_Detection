@@ -2,22 +2,23 @@ import torch
 from clearml import Task
 from ultralytics import YOLO
 
-Task.init(project_name="Signature Detection", task_name="YOLOv9 m Experiment")
+Task.init(project_name="Signature Detection", task_name="YOLOv9 m Experiment with Clean Data S")
 
-output_dir = "Round4"
+output_dir = "Clean Data S"
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
-model = YOLO("weights/yolov9m.pt").to(device)
+model = YOLO("weights/yolov9s.pt").to(device)
 
 dataset_config = "data.yaml"
 model.train(
     data=dataset_config,
     epochs=100,
-    batch=4,
+    batch=8,
     imgsz=640,
     optimizer="SGD",
-    lr0=0.01,
+    lr0=0.0001,
     momentum=0.9,
+    patience=20,
     weight_decay=0.0005,
     augment=True,
     hsv_h=0.015,
@@ -34,7 +35,7 @@ model.train(
     mixup=True,
     workers=8,
     project=output_dir,
-    name="yolov9_training",
+    name="Clean Data S",
     pretrained=True
 )
 

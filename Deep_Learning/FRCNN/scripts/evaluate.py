@@ -124,7 +124,7 @@ def load_json_file(file_path):
     return data
 
 def main():
-    detections_file_path = '/home/omar/Masters/Adv Image and Video Processiong/Project/Deep_Learning/FRCNN/inference_results2/results.json'
+    detections_file_path = '/home/omar/Masters/Adv Image and Video Processiong/Project/Deep_Learning/FRCNN/outputs/inference_results_clean/results.json'
     ground_truth_file_path = '/home/omar/Masters/Adv Image and Video Processiong/Project/Dataset/fcrnn_split_data_new/test/test_annotations.json'
 
 

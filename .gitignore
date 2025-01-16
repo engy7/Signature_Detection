@@ -4,6 +4,8 @@ Dataset
 Outputs
 Deep_Learning/YOLO/Round1/yolov9_training3/weights
 Deep_Learning/FRCNN/outputs
+Deep_Learning/YOLO/Clean Data/
+Deep_Learning/YOLO/Clean Data S/
 *.png
 *.jpg
 *.pt

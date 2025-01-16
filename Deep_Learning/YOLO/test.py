@@ -6,18 +6,18 @@ from ultralytics import YOLO
 Task.init(project_name="YOLOv9 Training", task_name="YOLOv9 Test")
 
 # Load the trained model
-model_path = "/home/omar/Masters/Adv Image and Video Processiong/Project/Deep_Learning/YOLO/Round4/yolov9_training/weights/best.pt"  # Replace with the path to your trained model
+model_path = "Clean Data S/Clean Data S/weights/best.pt"  # Replace with the path to your trained model
 model = YOLO(model_path)
 
 # Set the dataset configuration (if not done previously)
 dataset_config = "/home/omar/Masters/Adv Image and Video Processiong/Project/Deep_Learning/YOLO/data.yaml"
 
 # Directory for saving results and visualizations
-output_dir = "/home/omar/Masters/Adv Image and Video Processiong/Project/Deep_Learning/YOLO/Round4"
+output_dir = "/home/omar/Masters/Adv Image and Video Processiong/Project/Deep_Learning/YOLO/Clean Data S"
 os.makedirs(output_dir, exist_ok=True)
 
 # Run inference on the test dataset
-results = model.predict(source="/home/omar/Masters/Adv Image and Video Processiong/Project/Dataset/split_data/test/images",  # Test image folder
+results = model.predict(source="/home/omar/Masters/Adv Image and Video Processiong/Project/Dataset/split_data_yolo_v2/test/images",  # Test image folder
                         save=True,  # Save the predictions
                         project=output_dir,  # Save to the output directory
                         name="test_predictions")

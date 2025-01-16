@@ -1,7 +1,7 @@
-train: /home/omar/Masters/Adv Image and Video Processiong/Project/Dataset/split_data/train
-val: /home/omar/Masters/Adv Image and Video Processiong/Project/Dataset/split_data/val
-test: /home/omar/Masters/Adv Image and Video Processiong/Project/Dataset/split_data/test
+train: /home/omar/Masters/Adv Image and Video Processiong/Project/Dataset/split_data_yolo_v2/train
+val: /home/omar/Masters/Adv Image and Video Processiong/Project/Dataset/split_data_yolo_v2/val
+test: /home/omar/Masters/Adv Image and Video Processiong/Project/Dataset/split_data_yolo_v2/test
 
 
-nc: 3  
-names: ['HW', 'No', 'Sig'] 
+nc: 1
+names: ['Sig'] 
